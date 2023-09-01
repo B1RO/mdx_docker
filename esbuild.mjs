@@ -1,5 +1,6 @@
 import esbuild from 'esbuild';
 import mdx from "@mdx-js/esbuild"
+import fs from "fs"
 
 esbuild
   .build({
@@ -12,3 +13,28 @@ esbuild
   })
   
   .catch(() => process.exit(1));
+
+// Then write the HTML file
+const html = `
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My App</title>
+</head>
+<body>
+  <script src="index.js"></script>
+</body>
+</html>
+`;
+
+if (!fs.existsSync('dist')){
+  fs.mkdirSync('dist');
+}
+
+fs.writeFile('dist/index.html', html, err => {
+  if (err) {
+    console.error('Error writing file', err);
+  } else {
+    console.log('Successfully wrote file');
+  }
+})
