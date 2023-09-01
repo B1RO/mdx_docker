@@ -4,6 +4,7 @@
   "description": "Your package description",
   "main": "index.js",
   "scripts": {
+    "serve" : "serve -s ./dist",
     "build": "node esbuild.mjs"
   },
   "keywords": [],
@@ -15,5 +16,8 @@
     "esbuild": "^0.19.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "serve" : "14.2.1" 
   }
 }
