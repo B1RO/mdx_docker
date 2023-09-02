@@ -22,6 +22,7 @@ const html = `
   <title>My App</title>
 </head>
 <body>
+  <div id="root"/>
   <script src="index.js"></script>
 </body>
 </html>
